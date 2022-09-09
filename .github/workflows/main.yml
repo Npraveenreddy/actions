@@ -38,18 +38,18 @@ jobs:
       - name: Deploy to Docker swarm
         uses: wshihadeh/docker-deployment-action@v1
         with:
-          remote_docker_host: user@myswarm.com
+          remote_docker_host: ubuntu@52.55.244.111
           ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-swarm
-          deploy_path: /root/my-deployment
+          deploy_path: /root
           stack_file_name: docker-stack.yaml
           args: my_applicaion_stack_name
     
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
         with:
-          remote_docker_host: user@myswarm.com
+          remote_docker_host: ubuntu@52.55.244.111
           ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-compose
