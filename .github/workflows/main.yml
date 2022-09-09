@@ -43,7 +43,6 @@ jobs:
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-swarm
           deploy_path: /root
-          stack_file_name: docker-stack.yaml
           args: my_applicaion_stack_name
     
       - name: Deploy to Docker Host
